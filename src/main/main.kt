@@ -1,7 +1,7 @@
 package ru.netology
 
 fun main() {
-    val seconds = 1200
+    val seconds = 2400
     val text = "Был(а) в сети"
     println(agoToText(seconds, text))
 }
@@ -19,9 +19,9 @@ fun timeToMinutes(seconds: Int): String {
     val minutes = seconds / 60
     return when {
         minutes % 10 == 1 -> "минуту"
-        minutes % 10 in 2..4 -> "минуты"
-        minutes in 11..14 -> "минут"
-        else -> "минут"
+        minutes % 10 in 2..4 -> "$minutes минуты"
+        minutes in 11..14 -> "$minutes минут"
+        else -> "$minutes минут"
     }
 }
 
@@ -29,7 +29,7 @@ fun timeToHours(minutes: Int): String {
     val hour = minutes / 60
     return when {
         hour % 10 == 1 -> "час"
-        hour % 10 in 2..4 -> "часа"
-        else -> "часов"
+        hour % 10 in 2..4 -> "$hour часа"
+        else -> "$hour часов"
     }
 }
